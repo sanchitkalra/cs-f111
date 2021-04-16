@@ -6,7 +6,7 @@ void checkArmstrong(int x);
 
 int main() {
 
-    for (int i = 1000; i <= 9999; i++){
+    for (int i = 1000; i <= 999999; i++){
         checkArmstrong(i);
     }
 

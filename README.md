@@ -74,6 +74,22 @@ I'll periodically put all classwork and assignments here as and when I complete 
     ```
     Having a default case is recommended, although not necessary. 
     The first expression that matches is executed and any subsequent expressions if the `break` keyword isn't specified. It should almost always never be omitted. 
+20. There are three kinds of loops, namely, the `while`, `do-while` and the `for` loop. `while` and `for` loops check for the condition to be true before the first iteration while the `do-while` loops performs the first iteration without checking for the validity of the expression. Each successive iteration is preceded by a condition check and the evaluation of the increment expression.
+21. When a certain condition is met and we need to skip the remaining of a specific iteration, we use the `continue` statement and `break` when we need to break out or exit the entirely preventing any further iterations.
+22. Multiple variables can be initialised in a single for loop (they could be expressions themselves) and test condition could be any compound condition that evaluates to a boolean expression. To create an infinite loop, use a null test condition.
+23. An array is a sequenced indexed-addressible collection of elements. It stores homogenoues data only. Following are ways to init an array:
+    ```
+        int arr[] = {3, 2, 1, 5, 6} // creates an array of size 5 with these values
+        int arr[10] = {3, 2, 1, 5, 6} // creates an array of size 10 with the first five values the one as mentioned and the rest are zeros
+        int arr[10] = {0} // create an array of size 10 and all values zero, optimal way to init arrays
+        int arr[10]; // empty array of 10 elements, each index has a garbage value unless init, not recommended
+    ```
+    The number of elements being initialised cannot be greater than the size of the array or it could result in a segmentation fault. C does not check for array bounds, it is your responsibility to make sure everything is correct.
+24. Any element of an array is addressible by it's index. Example `arr[i]` where arr is an array of length L and i lies between 0(inclusive) and the length of the array(exclusive).
+25. Since an array is a sequential store of memory, each element's address can be represented as `element-address = base-address + (sizeof(element)*index)`, where base-address is the address of the first element which so happens to be the address of the array.
+26. Values from an array can be passed by value and passed by reference. An example call by value: `function(arr[i])` and a call by reference would be like `function(&arr[i])` where i is any valid index of the array. A value passed by reference may be dereferenced with the dereference(`*`) operator.
+27. Since an array is a reference the address of the first element, `function(&marks[0])` and `function(marks)` is the same. The receiving variable in the `function` must be pointer of the same datatype and each element can be accessed by incrementing the pointer to the requisite index.
+28. Individual elements of an array can also be accessed in the following manner: `*(arr + i)` where i is the requisite index. This can also be written in this way `i[arr]`. Essentially `arr[i]`, `*(arr + i)`, `*(i + arr)` and `i[arr]` are equivalent.
 
 Note: Obvious inferences have been omitted, they can always be looked up in the lecture slides if needed.
 

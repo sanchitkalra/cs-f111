@@ -26,7 +26,7 @@ I'll periodically put all classwork and assignments here as and when I complete 
 12. Formatters are not allowed inside scanf, use raw data indentifiers only. Example `scanf("5.2f");` does not work, while `scanf("%f");` works.
 13. Getchar function accepts string input unlike scanf which accept any. getchar stop at a new line or EOF, while scanf terminates input at a white space along with new line and EOF. Example `c = getchar();`. Reads string character by character.
 14. While using an `if-else` block, a ladder can be constructed in the following way:
-    ```
+    ```c
         if (some-condition-1) {
             // do something if some-condition-1 evaluates to true
         } else if (some-condition-2) {
@@ -38,7 +38,7 @@ I'll periodically put all classwork and assignments here as and when I complete 
 15. `if-else` statements can be nested to produce more complex logic.
 16. Char values are internally stored as their ASCII respresentations and as such can be compared like integer values. Position of decimals (0-9) < Upper case alphabets (A-Z) < Lower case alphabets (a-z). Refer a complete table [here](http://www.asciitable.com/)
 17. Dangling else: When not using braces(`{}`) with `if-else` expressions, an else is always associated with the closest if statement. For example:
-    ```
+    ```c
         if (x != 10)
             if (y > 3)
                 z = z/2;
@@ -46,7 +46,7 @@ I'll periodically put all classwork and assignments here as and when I complete 
             z = z*2;
     ```
     is the same as:
-    ```
+    ```c
         if (x != 10) {
             if (y > 3) 
                 z = z/2
@@ -56,7 +56,7 @@ I'll periodically put all classwork and assignments here as and when I complete 
     ```
 18. Use braces everywhere. Do not depend on C or a future reader to infer accurately the meaning of certain expressions. Safer and sure-shot option.
 19. Switch: A switch is used when a lot of values are to be compared against a given expression. Usage: 
-    ```
+    ```c
         switch (expression) {
             case const_1:
                 // do something if expression evaluates to const_1
@@ -78,7 +78,7 @@ I'll periodically put all classwork and assignments here as and when I complete 
 21. When a certain condition is met and we need to skip the remaining of a specific iteration, we use the `continue` statement and `break` when we need to break out or exit the entirely preventing any further iterations.
 22. Multiple variables can be initialised in a single for loop (they could be expressions themselves) and test condition could be any compound condition that evaluates to a boolean expression. To create an infinite loop, use a null test condition.
 23. An array is a sequenced indexed-addressible collection of elements. It stores homogenoues data only. Following are ways to init an array:
-    ```
+    ```c
         int arr[] = {3, 2, 1, 5, 6} // creates an array of size 5 with these values
         int arr[10] = {3, 2, 1, 5, 6} // creates an array of size 10 with the first five values the one as mentioned and the rest are zeros
         int arr[10] = {0} // create an array of size 10 and all values zero, optimal way to init arrays
@@ -88,7 +88,7 @@ I'll periodically put all classwork and assignments here as and when I complete 
 24. Any element of an array is addressible by it's index. Example `arr[i]` where arr is an array of length L and i lies between 0(inclusive) and the length of the array(exclusive).
 25. Since an array is a sequential store of memory, each element's address can be represented as `element-address = base-address + (sizeof(element)*index)`, where base-address is the address of the first element which so happens to be the address of the array.
 26. Values from an array can be passed by value and passed by reference. An example call by value: `function(arr[i])` and a call by reference would be like `function(&arr[i])` where i is any valid index of the array. A value passed by reference may be dereferenced with the dereference(`*`) operator.
-27. Since an array is a reference the address of the first element, `function(&marks[0])` and `function(marks)` is the same. The receiving variable in the `function` must be pointer of the same datatype and each element can be accessed by incrementing the pointer to the requisite index.
+27. Since an array is a reference to the address of the first element, `function(&marks[0])` and `function(marks)` is the same. The receiving variable in the `function` must be pointer of the same datatype and each element can be accessed by incrementing the pointer to the requisite index.
 28. Individual elements of an array can also be accessed in the following manner: `*(arr + i)` where i is the requisite index. This can also be written in this way `i[arr]`. Essentially `arr[i]`, `*(arr + i)`, `*(i + arr)` and `i[arr]` are equivalent.
 
 Note: Obvious inferences have been omitted, they can always be looked up in the lecture slides if needed.

@@ -192,7 +192,61 @@ A list of algorithms covered in the class is present [here](/Classwork)
 42. There are two ways of passing data to a function:
     1. Call by value. In this method the value is explicitly passed to a function and a copy in the memory is created.
     2. Call by reference. In this method a value is passed as a pointer to it's variable and hence no copies are created. This is the more memory efficient approach and allows the passed values to be changed.
-43. 
+43. Types of constant pointers
+    ```c
+        // const int *ptr
+        // can change the variable a pointer points to, cannot change the value of a pointer
+        int a = 56, b = 89;
+        const int *ptr = &a;
+        *ptr = 67 // this operation will fail
+        ptr = &b; // this operation will succeed
+    ```
+    ```c
+        // int *const ptr
+        // can change the value of the variable a pointer points to, cannot change the pointer to point at a different variable
+        int a = 56, b = 89;
+        int *const ptr = &a;
+        *ptr = 78; // this operation will succeed
+        ptr = &b; // this operation will fail
+    ```
+    ```c
+        // const int *const ptr
+        // cannot change the variable a pointer points to, cannot change the value of a pointer
+        int a = 56, b = 89;
+        int *const ptr = &a;
+        *ptr = 78; // this operation will fail
+        ptr = &b; // this operation will fail too
+    ```
+44. Functions can also return pointers. Example
+    ```c
+        int* larger(int *px, int *py) {
+            if (*px > *py) {
+                return *px;
+            } else {
+                return *py
+            }
+        }
+    ```
+    This does not create multiple copies of variables and is much more memory efficient
+45. To use a function as pointer, the syntax is `function-return-type (*pointer-name)(argument-list)`. Example
+    ```c
+        int sum(int x, int y){
+            return x + y;
+        }
+
+        int main() {
+
+            int (*ptr) (int, int);
+            ptr = sum;
+
+            printf("%d", ptr(25, 50));
+
+            return 0;
+        }
+    ```
+46. Size of all pointers is the same which is 8. A pointer is specific to a specific data type determined during its decleration.
+47. Pointers can be derefernced to the same level, ie, double pointers to double poiters, single pointers to single pointers and so on.
+48. Elements of 2D arrays can also be accessed using pointers. The pointer to the array stores the address of the first element of the 2D array, which itself, is an array. `*(arr + i) + j` will point to the address of the jth element of the ith 1D array inside a 2D array. `*(*(arr + i) + j)` will point to the jth value inside the ith array in the 2D array.
 
 Note: Obvious inferences have been omitted, they can always be looked up in the lecture slides if needed.
 

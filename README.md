@@ -3,6 +3,8 @@ CS F111 Course taught at BITS Pilani, Hyderabad Campus (1-2)
 
 I'll periodically put all classwork and assignments here as and when I complete them.
 
+A list of algorithms covered in the class is present [here](/Classwork)
+
 ## Notes
 
 1. The escape character `\ooo` is used to print Octal Numbers and `\xxh` to print Hexadecimal Numbers. (Ref Lec 10). 
@@ -92,6 +94,55 @@ I'll periodically put all classwork and assignments here as and when I complete 
 28. Individual elements of an array can also be accessed in the following manner: `*(arr + i)` where i is the requisite index. This can also be written in this way `i[arr]`. Essentially `arr[i]`, `*(arr + i)`, `*(i + arr)` and `i[arr]` are equivalent.
 29. When init a 2D array, the first size specifier may be omitted provided the second has been specified when fully init the array at compile time. When init an empty or partially init an array, both sizes must be specified.
 30. Any element of a 2D array may be accessed in the following manner: `arr[row-index][col-index]`.
+31. Strings can be declared in the following ways: 
+    ```c
+        char city[7]; // empty string of size 7
+        char city[7] = "Pilani"; // need not specify the null character
+        char city[7] = {'B', 'I', 'T', 'S', '\0'}; // need to specify the null character
+        char *str = "BITS Pilani"; // init as a string pointer
+    ```
+    Strings init as arrays are mutable and string init as pointers are immutable
+32. Like arrays, strings are also an array of characters, hence, C does not check for size and bounds, it is your responsiblity.
+33. The null character(`\0`) is important it marks the end of a string and multiple libraries depend on it.
+34. String input can be taken in the following ways
+    ```c
+        char text[80]; // a varible to hold the string
+        
+        scanf("%[^\n]", text); // using scanf to take input that includes whitespace and terminates at the new line character; any terminator can be used instead of the new line character by replacing \n with that character.
+
+        // using getchar()
+        while (ch != '\n') {
+            ch = getchar();
+            text[c] = ch;
+            c++;
+        }
+        text[c] = '\0'; // must add the null character at the end of the string
+
+        // using gets
+        gets(text); // this is an unsafe way to get input since it does not check for bounds; reads until end of line.
+    ```
+35. Strings can be printed character by character using putchar, and the entire string at once using puts
+    ```c
+        char ch = 'A';
+        putchar(ch); // prints a single character
+
+        char line[30] = "Hello World!";
+        puts(line); // prints the entire string
+    ```
+36. Characters are internally represented as integers corresponding to their positions in the ASCII table, hence, char arithmetic is possible
+    ```c
+        char x = '7'; // ASCII - 55
+        char y = '0'; // ASCII - 48
+        printf("%d", x-y); // prints '7' as 7 is the difference between the ACSII values of x and y
+    ```
+37. String representation of integers can be converted back to integers using the atoi() function. Example `atoi(string)`.
+38. String manipulation functions
+    ```c
+        strcpy(destination, source); // copies the contents of source into destination with no bound checking
+        strncpy(destination, source, n); // copies the contents of source into destination upto n
+        strcmp(s1, s2); // returns a number greater than, smaller than, or zero if s1>s2, s1<s2, s1 = s2 respectively
+        strncmp(s1, s2); // returns a number greater than, smaller than, or zero if s1>s2, s1<s2, s1 = s2 respectively upto n
+    ```
 
 Note: Obvious inferences have been omitted, they can always be looked up in the lecture slides if needed.
 

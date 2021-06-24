@@ -19,8 +19,9 @@
 - [Printing blocks of numbers]()
 - [Printing an array in reverse]()
 - [Linear Search](linear_search.c)
-- [Bubble Sort]()
-- [Binary Search]()
+- [Bubble Sort](bubble_sort.c)
+- [Binary Search](binary_search.c)
+- [Matrix Multiplication](multiplication.c)
 
 ### Recursion
 

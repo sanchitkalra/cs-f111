@@ -25,8 +25,8 @@ A list of algorithms covered in the class is present [here](/Classwork)
 9. Sizeof operator: A special operator that returns the size of a specific variable's datatype. Usage `sizeof(x)`.
 10. C performs implicit type conversions to calculate results but the final result is according to the data type where the result in being sent. Ref L14.
 11. Explicit type conversions can be performed on variables. Usage `(target-datatype)var`. Example: converting a int to a float `(float)some_int_var`.
-12. Formatters are not allowed inside scanf, use raw data indentifiers only. Example `scanf("5.2f");` does not work, while `scanf("%f");` works.
-13. Getchar function accepts string input unlike scanf which accept any. getchar stop at a new line or EOF, while scanf terminates input at a white space along with new line and EOF. Example `c = getchar();`. Reads string character by character.
+12. Float formatters are not allowed inside scanf, use raw data indentifiers only. Example `scanf("5.2f");` does not work, while `scanf("%f");` works.
+13. Getchar function accepts string input unlike scanf which can accept any data type. getchar stop at a new line or EOF, while scanf terminates input at a white space along with new line and EOF. Example `c = getchar();`. Reads string character by character.
 14. While using an `if-else` block, a ladder can be constructed in the following way:
     ```c
         if (some-condition-1) {
@@ -139,9 +139,9 @@ A list of algorithms covered in the class is present [here](/Classwork)
 38. String manipulation functions
     ```c
         strcpy(destination, source); // copies the contents of source into destination with no bound checking
-        strncpy(destination, source, n); // copies the contents of source into destination upto n
+        strncpy(destination, source, n); // copies the contents of source into destination upto n characters
         strcmp(s1, s2); // returns a number greater than, smaller than, or zero if s1>s2, s1<s2, s1 = s2 respectively
-        strncmp(s1, s2); // returns a number greater than, smaller than, or zero if s1>s2, s1<s2, s1 = s2 respectively upto n
+        strncmp(s1, s2); // returns a number greater than, smaller than, or zero if s1>s2, s1<s2, s1 = s2 respectively upto n characters
         strlen(string); // returns the number of characters before the '\0' character
         strstr(s1, s2); // returns a pointer to the first character of s2 if found in s1 and a null pointer otherwise. s1 is the string to be examined and s2 the substring to be searched in s1.
     ```

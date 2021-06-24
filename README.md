@@ -90,6 +90,8 @@ I'll periodically put all classwork and assignments here as and when I complete 
 26. Values from an array can be passed by value and passed by reference. An example call by value: `function(arr[i])` and a call by reference would be like `function(&arr[i])` where i is any valid index of the array. A value passed by reference may be dereferenced with the dereference(`*`) operator.
 27. Since an array is a reference to the address of the first element, `function(&marks[0])` and `function(marks)` is the same. The receiving variable in the `function` must be pointer of the same datatype and each element can be accessed by incrementing the pointer to the requisite index.
 28. Individual elements of an array can also be accessed in the following manner: `*(arr + i)` where i is the requisite index. This can also be written in this way `i[arr]`. Essentially `arr[i]`, `*(arr + i)`, `*(i + arr)` and `i[arr]` are equivalent.
+29. When init a 2D array, the first size specifier may be omitted provided the second has been specified when fully init the array at compile time. When init an empty or partially init an array, both sizes must be specified.
+30. Any element of a 2D array may be accessed in the following manner: `arr[row-index][col-index]`.
 
 Note: Obvious inferences have been omitted, they can always be looked up in the lecture slides if needed.
 

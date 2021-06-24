@@ -6,12 +6,14 @@
 - [Largest of arbitary number of numbers]()
 - [Largest of 1000 numbers]()
 - [Factorial of a number]()
+- [Swap Values](swap.c)
 - [Root of a quadratic equation]()
 
 ### Loops
 
 - [Fibonacci Series]()
 - [Armstrong Number]()
+- [Factorial of a number](fact.c)
 
 ### Arrays
 
@@ -25,4 +27,11 @@
 
 ### Recursion
 
-- [Factorial of a number (recursively)]()
+- [Factorial of a number (recursively)](fact_recursive.c)
+- [Sum upto N](sum_upto_n.c)
+- [Fibonacci Series](fibo.c)
+- [Palindrome](palindrome.c)
+
+### Functions
+
+- [Swap Values with Call by Reference](swap_ref.c)

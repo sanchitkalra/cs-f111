@@ -142,7 +142,57 @@ A list of algorithms covered in the class is present [here](/Classwork)
         strncpy(destination, source, n); // copies the contents of source into destination upto n
         strcmp(s1, s2); // returns a number greater than, smaller than, or zero if s1>s2, s1<s2, s1 = s2 respectively
         strncmp(s1, s2); // returns a number greater than, smaller than, or zero if s1>s2, s1<s2, s1 = s2 respectively upto n
+        strlen(string); // returns the number of characters before the '\0' character
+        strstr(s1, s2); // returns a pointer to the first character of s2 if found in s1 and a null pointer otherwise. s1 is the string to be examined and s2 the substring to be searched in s1.
     ```
+39. When creating an array of strings, instead of using a 2D array, using a jagged array which an array of pointers to strings is preferred because strings can be any length and this is more memory efficient.
+40. Functions can return values, have side effects, or both. If a function has both side effects and return values, the side effect happens before the value is returned.
+41. Functions can either be declared and be fully defined before their usage or declared before they usage but defined elsewhere in the program. Example
+    ```c
+        void someFunction(int arg1, int arg2) { // data types of parameters must be defined here because the function is being declared and defined together
+            // do something
+        }
+        int main() {
+
+            someFunction(arg1, arg2);
+
+            return 0;
+        }
+    ```
+    is the same as
+    ```c
+        void someFunction(arg1, arg2); // the function is only being declared here, hence the data types may be omitted
+        
+        int main() {
+
+            someFunction(arg1, arg2);
+
+            return 0;
+        }
+
+        void someFunction(int arg1, int arg2) { // data types of parameters need to be defined where the function is being defined
+            // do something
+        }
+    ```
+    is the same as
+    ```c
+        void someFunction(); // the function is only being declared here, hence the parameters themselves may be omitted
+        
+        int main() {
+
+            someFunction(arg1, arg2);
+
+            return 0;
+        }
+
+        void someFunction(int arg1, int arg2) { // data types of parameters need to be defined where the function is being defined
+            // do something
+        }
+    ```
+42. There are two ways of passing data to a function:
+    1. Call by value. In this method the value is explicitly passed to a function and a copy in the memory is created.
+    2. Call by reference. In this method a value is passed as a pointer to it's variable and hence no copies are created. This is the more memory efficient approach and allows the passed values to be changed.
+43. 
 
 Note: Obvious inferences have been omitted, they can always be looked up in the lecture slides if needed.
 

@@ -98,7 +98,7 @@ A list of algorithms covered in the class is present [here](/Classwork)
     ```c
         char city[7]; // empty string of size 7
         char city[7] = "Pilani"; // need not specify the null character
-        char city[7] = {'B', 'I', 'T', 'S', '\0'}; // need to specify the null character
+        char city[7] = {'B', 'I', 'T', 'S', '\0'}; // need to specify the null character; if unspecified, the null character isn't auto appeneded
         char *str = "BITS Pilani"; // init as a string pointer
     ```
     Strings init as arrays are mutable and string init as pointers are immutable
@@ -177,6 +177,21 @@ A list of algorithms covered in the class is present [here](/Classwork)
     is the same as
     ```c
         void someFunction(); // the function is only being declared here, hence the parameters themselves may be omitted
+        
+        int main() {
+
+            someFunction(arg1, arg2);
+
+            return 0;
+        }
+
+        void someFunction(int arg1, int arg2) { // data types of parameters need to be defined where the function is being defined
+            // do something
+        }
+    ```
+    is the same as
+    ```c
+        void someFunction(int, int); // the function is only being declared here, hence specifying only the data types of the parameters is sufficient too
         
         int main() {
 
